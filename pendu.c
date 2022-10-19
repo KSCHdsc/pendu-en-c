@@ -1,6 +1,6 @@
 /**
  * @file pendu.c
- * @author Quentin Bodart (github.com/KSCHdsc)
+ * @author KSCHdsc x Adrien Fournier (Follow me: github.com/KSCHdsc)
  * @brief 
  * @version 1.1.2
  * @date 2022-10-11
@@ -8,6 +8,8 @@
  * @copyright Copyright (c) 2022
  * 
  * CE TRAVAIL A ETE FORK DEPUIS TP_PENDU SUR GITHUB / AVEC L'AIDE DE LA DOC "Langage C" et Stakoverflow
+ * 
+ * 
  * plus jamais je referais de C sache le Hervé
  */
 
@@ -102,7 +104,7 @@ int main() {
         nombre_ligne++;
       }
 
-      rewind(fichier);
+      //rewind(fichier);
       fclose(fichier);
 
     } else {
@@ -180,8 +182,7 @@ int main() {
 
     char inutilebutwork = lecturedecarac();
     system("cls");
-
-
+ 
 
     //Fonction boucle principale, si le joueur n'a pas encore fini de jouer alors elle sera lue
     while (fin_de_partie == 0) {
@@ -193,8 +194,6 @@ int main() {
       char ma_lettre = lecturedecarac();
 
       
-        
-
       bonne_lettre = 0;
 
       for (i = 0; i < longueur; i++) {
