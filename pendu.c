@@ -1,6 +1,6 @@
 /**
  * @file pendu.c
- * @author KSCHdsc x Adrien Fournier (Follow me: github.com/KSCHdsc)
+ * @author KSCHdsc x ADFRN (Follow me: github.com/KSCHdsc)
  * @brief 
  * @version 1.1.2
  * @date 2022-10-11
