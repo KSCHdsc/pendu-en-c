@@ -22,8 +22,6 @@
 
 #include <time.h>
 
-#include <conio.h>
-
 //Faire appel au fichier "./pendu.h" pour la déclaration de "lecturedecarac"
 #include "pendu.h"
 
@@ -150,7 +148,7 @@ int main() {
 
     int longueur = strlen(mot_secret);
 
-    // on fait le mot etoilé
+    // on cache le mot ici
 
     for (i = 0; i < longueur; i++) {
 
@@ -163,8 +161,8 @@ int main() {
     // printf("test avant le while( partie finie == 0)");
 
     char str[100];
+    sleep(2);
     system("title Game Started");
-    sleep(3);
     system("cls");
     system("color b");
     printf("Entre ton pseudo: ");
@@ -180,7 +178,7 @@ int main() {
     printf("\n\n\t\tGithub Issue ===>     https://github.com/KSCHdsc/pendu-en-c/issues/new\n");
 
 
-    char ideedemerde = lecturedecarac();
+    char inutilebutwork = lecturedecarac();
     system("cls");
 
 
@@ -194,6 +192,9 @@ int main() {
 
       char ma_lettre = lecturedecarac();
 
+      
+        
+
       bonne_lettre = 0;
 
       for (i = 0; i < longueur; i++) {
@@ -206,6 +207,10 @@ int main() {
         }
 
       }
+
+      if (isalpha(ma_lettre))
+      {
+        
       // Tableau des lettres essayé le max du tableau est à 26 car c'est le nombre de lettres qu'il y a dans l'alphabet.
       char tabLettre[26];
       int essaye = 0;
@@ -221,8 +226,9 @@ int main() {
         // On met les nouvelles lettres dans le tableau.
         tabLettre[compteur_Tableau] = ma_lettre;
         compteur_Tableau++;
-
-        if (bonne_lettre == 0) { // le joueur perd 
+      
+        if (bonne_lettre == 0) {
+          
 
           system("cls");
           //on retire -1 coup !
@@ -324,13 +330,21 @@ int main() {
           default:
             break;
           }
+           }
         }
       }
+      if (!isalpha(ma_lettre))
+      {
+        system("cls");
+        printf("Ho Ho Ho! Bad idea man!!!");
+      }
+      
 
       // Si le mot est découvert, alors c'est gagné
       int comparaison = strcmp(mot_secret, mot_hide);
 
       if (comparaison == 0) {
+
 
         // on demande pour relancer une partie ou non
         printf("\n\nGAGNE ! le mot etait bien : %s\nVoulez vous relancer une partie ?\n OUI = 1     |       NON = 0 ", mot_secret);
@@ -358,7 +372,7 @@ int main() {
 
       // S'il ne reste plus de coup à jouer, alors c'est perdu 
       if (coups_restant <= 0) {
-        printf("\n\nDesole vous avez perdu\nLe Mot cache ete : %s\nVoulez vous rejouer une partie ? \nOUI = 1     |     NON = 0 ", mot_secret);
+        printf("\n\nDesole vous avez perdu\nLe Mot cache etait: %s\nVoulez vous rejouer une partie ? \nOUI = 1     |     NON = 0 ", mot_secret);
 
         // REJOUER ?
 
@@ -381,6 +395,7 @@ int main() {
         fin_de_partie = 1;
 
       }
+    
     }
   }
 
